@@ -1,0 +1,40 @@
+openapi: 3.0.1
+info:
+  title: 'User APIS '
+  description: Apis to check user crud operations
+  version: "1.0"
+servers:
+- url: http://localhost:8080
+  description: Generated server url
+paths:
+  /users/greet:
+    get:
+      tags:
+      - user-controller
+      operationId: greet
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+  /users/getName/{name}:
+    get:
+      tags:
+      - user-controller
+      operationId: name
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+components: {}
